@@ -279,6 +279,57 @@
             color: #FFD700; /* Gold bullets in service boxes */
         }
 
+        /* Styling for the new overview grid */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid for overview boxes */
+            gap: 20px; /* Smaller gap for overview boxes */
+            margin-top: 20px;
+            margin-bottom: 40px; /* Space before detailed services */
+        }
+
+        .overview-box {
+            background-color: #1a1a1a; /* Dark background */
+            border: 1px solid #FFD700; /* Gold border */
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-align: left;
+            font-size: 1.05em;
+            font-weight: 600;
+            color: #FFD700; /* Gold text */
+            box-shadow: 0 2px 10px rgba(255, 215, 0, 0.1); /* Subtle gold shadow */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .overview-box:hover {
+            background-color: #2a2a2a; /* Slightly lighter on hover */
+            transform: translateY(-3px); /* Slight lift */
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+        }
+
+        /* Ensure links within overview-box fill the entire box */
+        .overview-box a {
+            display: block; /* Make the anchor tag fill the box */
+            color: inherit; /* Inherit color from parent (.overview-box) */
+            text-decoration: none; /* No underline by default */
+            padding: 0; /* Remove padding from anchor itself */
+            margin: 0; /* Remove margin from anchor itself */
+        }
+
+        .overview-box a:hover {
+            text-decoration: none; /* Keep no underline on hover */
+        }
+
+        /* Styling for the new page break */
+        .page-break-hr {
+            border: 0;
+            height: 3px; /* Slightly thicker for a more prominent break */
+            background: linear-gradient(to right, transparent, #FFD700, transparent);
+            margin: 80px 0; /* More margin for clear separation */
+            border-radius: 5px;
+        }
+
+
         /* Responsive Adjustments */
         @media (max-width: 768px) {
             h1 { font-size: 2.5em; }
@@ -324,6 +375,10 @@
 
             .services-grid {
                 grid-template-columns: 1fr; /* Stack services on small screens */
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr; /* Single column for overview on small screens */
             }
         }
 
@@ -381,7 +436,7 @@
                 <h2>Why Partner with <span class="gold-text">ModeLIQ?</span></h2>
                 <p>Choosing the right consulting partner is critical. At ModeLIQ, our unique blend of expertise, innovative solutions, and client-centric approach sets us apart. We don't just offer services; we forge partnerships built on trust, intelligence, and a shared commitment to excellence.</p>
 
-                <h3><span class="gold-text">🔬 Deep Technical Expertise</span></h3>
+                <h3><span class="gold-text">Deep Technical Expertise</span></h3>
                 <p>Our strength lies in our profound understanding of quantitative finance and risk methodologies. Our team comprises seasoned quants, data scientists, and risk practitioners who possess an intimate knowledge of:</p>
                 <ul>
                     <li><span class="gold-text">Model Development:</span> Designing, building, and optimising advanced quantitative models.</li>
@@ -393,7 +448,7 @@
                 </ul>
                 <p>We translate intricate technical concepts into actionable strategies, ensuring your models and risk frameworks are not only compliant but also optimised for performance.</p>
 
-                <h3><span class="gold-text">🤖 AI-Powered Solutions</span></h3>
+                <h3><span class="gold-text">AI-Powered Solutions</span></h3>
                 <p>The future of finance is intelligent, and so are our solutions. We harness the transformative power of Artificial Intelligence and Machine Learning to deliver advanced risk management capabilities. Our AI solutions are developed with an unwavering focus on:</p>
                 <ul>
                     <li><span class="gold-text">Explainability:</span> Ensuring transparency in complex AI decision-making processes.</li>
@@ -402,7 +457,7 @@
                 </ul>
                 <p>By leveraging AI responsibly, we help you gain deeper insights, automate processes, and make more precise, data-driven decisions that are ready for audit and regulatory scrutiny.</p>
 
-                <h3><span class="gold-text">📈 Regulatory Intelligence</span></h3>
+                <h3><span class="gold-text">Regulatory Intelligence</span></h3>
                 <p>Navigating the labyrinth of global financial regulations can be daunting. ModeLIQ acts as your compass, providing <span class="gold-text">proactive regulatory intelligence</span> to ensure your strategies are not just compliant, but strategically aligned with evolving supervisory expectations. Our expertise spans:</p>
                 <ul>
                     <li><span class="gold-text">PRA (Prudential Regulation Authority) & ECB (European Central Bank):</span> Deep understanding of European banking regulations.</li>
@@ -413,7 +468,7 @@
                 </ul>
                 <p>We empower you to anticipate, interpret, and respond effectively to regulatory shifts, turning compliance into a competitive advantage.</p>
 
-                <h3><span class="gold-text">⚡ Execution-Focused Delivery</span></h3>
+                <h3><span class="gold-text">Execution-Focused Delivery</span></h3>
                 <p>At ModeLIQ, we believe in tangible results. Our approach is characterised by <span class="gold-text">fast, efficient, and audit-ready delivery</span>. We are committed to:</p>
                 <ul>
                     <li><span class="gold-text">Agile Methodologies:</span> Ensuring flexible and responsive project management.</li>
@@ -423,7 +478,7 @@
                 </ul>
                 <p>We cut through complexity to provide practical, implementable solutions that generate immediate value and stand up to the most rigorous internal and external scrutiny.</p>
 
-                <h3><span class="gold-text">🤝 Trusted Partner</span></h3>
+                <h3><span class="gold-text">Trusted Partner</span></h3>
                 <p>Our reputation is built on enduring relationships. We serve as a <span class="gold-text">trusted partner</span> to a diverse clientele within the financial ecosystem, including:</p>
                 <ul>
                     <li><span class="gold-text">Tier 1 Banks & Challenger Banks:</span> Supporting complex risk frameworks and digital transformations.</li>
@@ -438,13 +493,29 @@
 
             <!-- Services Section -->
             <section id="services">
-                <h2>🔧 Services – <span class="gold-text">ModeLIQ Consulting</span></h2>
+                <h2>Services – <span class="gold-text">ModeLIQ Consulting</span></h2>
                 <p style="font-style: italic;">Precision. Governance. Intelligence.</p>
                 <p>At ModeLIQ, our comprehensive suite of services is meticulously designed to empower financial institutions to manage risk proactively, develop robust models, and leverage cutting-edge AI for superior decision-making. Each service is infused with our deep technical expertise and forward-thinking approach, ensuring you not only meet regulatory mandates but also gain a strategic advantage.</p>
 
+                <!-- Our Services - Overview (Two-column list in boxes) -->
+                <h3 class="gold-text">Overview</h3>
+                <div class="overview-grid">
+                    <div class="overview-box"><a href="#model-development-quantitative-solutions"><span class="gold-text">Model Development & Quantitative Solutions</span></a></div>
+                    <div class="overview-box"><a href="#model-validation-independent-review"><span class="gold-text">Model Validation & Independent Review</span></a></div>
+                    <div class="overview-box"><a href="#model-risk-management-mrm"><span class="gold-text">Model Risk Management (MRM)</span></a></div>
+                    <div class="overview-box"><a href="#regulatory-advisory-compliance-strategy"><span class="gold-text">Regulatory Advisory & Compliance Strategy</span></a></div>
+                    <div class="overview-box"><a href="#ai-machine-learning-model-risk"><span class="gold-text">AI & Machine Learning Model Risk</span></a></div>
+                    <div class="overview-box"><a href="#stress-testing-scenario-design"><span class="gold-text">Stress Testing & Scenario Design</span></a></div>
+                    <div class="overview-box"><a href="#data-infrastructure-model-inventory-automation"><span class="gold-text">Data Infrastructure & Model Inventory Automation</span></a></div>
+                    <div class="overview-box"><a href="#remediation-audit-challenge-support"><span class="gold-text">Remediation, Audit & Challenge Support</span></a></div>
+                </div>
+                <!-- End Our Services - Overview -->
+
+                <hr class="page-break-hr"> <!-- Added page break here -->
+
                 <div class="services-grid">
-                    <div class="service-box">
-                        <h3><span class="gold-text">1. Model Development & Quantitative Solutions</span></h3>
+                    <div class="service-box" id="model-development-quantitative-solutions">
+                        <h3><span class="gold-text">Model Development & Quantitative Solutions</span></h3>
                         <p>At ModeLIQ, we specialise in the design, build, and optimisation of advanced quantitative models that drive robust risk management, capital efficiency, and strategic decision-making. Our expertise spans the full model development lifecycle, ensuring precision and reliability.</p>
                         <h4>Our Model Development Capabilities:</h4>
                         <ul>
@@ -465,8 +536,8 @@
                         <p><span class="gold-text">AI Enablement:</span> We integrate advanced machine learning techniques into model development for enhanced predictive power and robustness. This includes leveraging AI for feature selection, hyperparameter optimisation, and developing hybrid models that combine traditional quantitative methods with cutting-edge AI.</p>
                     </div>
 
-                    <div class="service-box">
-                        <h3><span class="gold-text">2. Model Validation & Independent Review</span></h3>
+                    <div class="service-box" id="model-validation-independent-review">
+                        <h3><span class="gold-text">Model Validation & Independent Review</span></h3>
                         <p>Independent validation is paramount for model credibility and regulatory assurance. We provide highly rigorous model validations designed not only to meet internal governance standards but also to exceed external regulatory expectations, giving you peace of mind and demonstrating due diligence.</p>
                         <h4>Our Independent Review & Validation Process:</h4>
                         <ul>
@@ -479,8 +550,8 @@
                         <p><span class="gold-text">AI Enablement:</span> We leverage automated testing frameworks for rapid and repeatable validation processes, complemented by generative AI tools for producing high-quality validation commentary. Furthermore, our anomaly detection algorithms provide early warnings on subtle shifts in model performance, enabling proactive intervention.</p>
                     </div>
 
-                    <div class="service-box">
-                        <h3><span class="gold-text">3. Model Risk Management (MRM)</span></h3>
+                    <div class="service-box" id="model-risk-management-mrm">
+                        <h3><span class="gold-text">Model Risk Management (MRM)</span></h3>
                         <p>Models are the backbone of modern finance, but they also introduce inherent risks. Our team delivers end-to-end support across the full model lifecycle to help financial institutions establish, operate, and enhance effective model risk frameworks, transforming potential vulnerabilities into controlled opportunities.</p>
                         <h4>Our Core MRM Capabilities:</h4>
                         <ul>
@@ -494,8 +565,8 @@
                         <p><span class="gold-text">AI Enablement:</span> We integrate advanced Natural Language Processing (NLP) and Machine Learning (ML)-driven tools to **automate and streamline core MRM processes**. This includes intelligent automation of model documentation review, precise risk classification, and proactive alert generation from validation reports, significantly enhancing efficiency and accuracy.</p>
                     </div>
 
-                    <div class="service-box">
-                        <h3><span class="gold-text">4. Regulatory Advisory & Compliance Strategy</span></h3>
+                    <div class="service-box" id="regulatory-advisory-compliance-strategy">
+                        <h3><span class="gold-text">Regulatory Advisory & Compliance Strategy</span></h3>
                         <p>In an ever-evolving regulatory landscape, staying ahead is crucial. ModeLIQ decodes and strategically aligns complex global regulatory requirements with your entire model and risk architecture. We help you navigate supervisory demands with clarity and confidence, ensuring sustainable compliance and robust risk governance.</p>
                         <h4>Key Regulatory & Compliance Areas:</h4>
                         <ul>
@@ -508,8 +579,8 @@
                         <p><span class="gold-text">AI Enablement:</span> We utilise **AI-driven compliance trackers** that continuously monitor regulatory updates, automatically mapping new requirements to your existing frameworks. Our **regulation summarisation tools** provide concise, actionable intelligence, supporting dynamic regulatory mapping and efficient change management within your organisation.</p>
                     </div>
 
-                    <div class="service-box">
-                        <h3><span class="gold-text">5. AI & Machine Learning Model Risk</span></h3>
+                    <div class="service-box" id="ai-machine-learning-model-risk">
+                        <h3><span class="gold-text">AI & Machine Learning Model Risk</span></h3>
                         <p>While AI/ML offers unparalleled efficiency and sophistication, it also introduces unique challenges related to opacity, bias, and compliance risk. ModeLIQ ensures that your adoption of AI is **responsibly governed, explainable, and trustworthy**, allowing you to harness its power without compromising integrity or regulatory standing.</p>
                         <h4>Our Specialised AI/ML Model Risk Services:</h4>
                         <ul>
@@ -523,8 +594,8 @@
                         <p><span class="gold-text">AI Enablement:</span> We don't just enable AI; we govern it with precision. Our internal proprietary tools are designed to **assess explainability, bias, and robustness at scale** across your entire AI/ML model estate, providing continuous oversight and assurance.</p>
                     </div>
 
-                    <div class="service-box">
-                        <h3><span class="gold-text">6. Stress Testing & Scenario Design</span></h3>
+                    <div class="service-box" id="stress-testing-scenario-design">
+                        <h3><span class="gold-text">Stress Testing & Scenario Design</span></h3>
                         <p>Anticipate tail risk and navigate regulatory scrutiny with confidence. ModeLIQ designs and implements robust stress testing frameworks powered by a judicious blend of expert judgment and sophisticated AI modelling. Our approaches equip you to understand potential vulnerabilities and proactively manage capital and liquidity risks.</p>
                         <h4>Our Stress Testing & Scenario Design Expertise:</h4>
                         <ul>
@@ -538,8 +609,8 @@
                         <p><span class="gold-text">AI Enablement:</span> AI models are deployed to project **nonlinear impacts of stressors** across complex portfolios, providing a more nuanced understanding of risk aggregation. Additionally, AI assists in simulating emerging risk combinations, allowing for the exploration of novel and inter-connected threats that traditional methods might miss.</p>
                     </div>
 
-                    <div class="service-box">
-                        <h3><span class="gold-text">7. Data Infrastructure & Model Inventory Automation</span></h3>
+                    <div class="service-box" id="data-infrastructure-model-inventory-automation">
+                        <h3><span class="gold-text">Data Infrastructure & Model Inventory Automation</span></h3>
                         <p>The integrity and efficiency of your models are intrinsically linked to the quality and accessibility of your data. At ModeLIQ, we specialise in modernising your data flows and creating traceable, auditable model repositories that serve as the single source of truth for your model estate.</p>
                         <h4>Our Data & Automation Solutions:</h4>
                         <ul>
@@ -552,8 +623,8 @@
                         <p><span class="gold-text">AI Enablement:</span> We deploy **intelligent bots and Robotic Process Automation (RPA)** for enhanced efficiency. These bots perform automated metadata extraction from various documents, trigger validation calendar alerts, and send automated notifications to model owners for impending reviews or required actions, significantly reducing manual effort and human error.</p>
                     </div>
 
-                    <div class="service-box">
-                        <h3><span class="gold-text">8. Remediation, Audit & Challenge Support</span></h3>
+                    <div class="service-box" id="remediation-audit-challenge-support">
+                        <h3><span class="gold-text">Remediation, Audit & Challenge Support</span></h3>
                         <p>When faced with audit findings or regulatory challenges, a swift, decisive, and expert-driven response is critical. ModeLIQ provides unparalleled support for model audits and leads the execution of complex regulatory remediation projects, ensuring you are well-prepared, respond effectively, and emerge stronger.</p>
                         <h4>Our Remediation & Support Services:</h4>
                         <ul>
@@ -600,10 +671,8 @@
                 <p><span class="gold-text" style="font-weight: bold;">Let's begin a conversation about your challenges and how our expertise can drive your success.</span></p>
                 <ul>
                     <li><span class="gold-text">Request a Free Consultation:</span> Discuss your specific needs with one of our experts.</li>
-                    <li><span class="gold-text">Email Us:</span> <a href="mailto:Rahul.Choudhary@Algorisk.co.uk" class="gold-text">Rahul.Choudhary@Algorisk.co.uk</a></li>
-                    <li><span class="gold-text">Call Us:</span> <a href="tel:+447843332824" class="gold-text">+44 7843332824</a></li>
                 </ul>
-                <a href="mailto:info@modeliq.com" class="cta-button">EMAIL US TODAY</a>
+                <a href="mailto:Rahul.Choudhary@Algorisk.co.uk" class="cta-button">EMAIL US TODAY</a>
             </section>
         </div>
     </main>
