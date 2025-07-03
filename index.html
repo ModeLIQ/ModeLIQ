@@ -127,12 +127,14 @@
             padding: 0 20px;
         }
 
-        /* Styling for the logo in the navigation */
-        .nav-logo-img {
-            height: 40px; /* Adjust height as needed */
-            width: auto;
-            vertical-align: middle;
-            filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.3)); /* Subtle glow for the nav logo */
+        /* Styling for the text-based logo in the navigation */
+        .nav-logo-text {
+            font-size: 2.2em; /* Bigger font size for nav logo */
+            font-weight: 900; /* Extra bold */
+            color: #FFD700; /* Gold color */
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.5); /* Subtle gold glow */
+            letter-spacing: -1px; /* Slightly tighter letter spacing */
+            text-decoration: none; /* No underline */
         }
 
         nav ul {
@@ -165,13 +167,14 @@
             overflow: hidden; /* For any potential background effects */
         }
 
-        /* Styling for the main logo in the hero section */
-        .hero-logo-img {
-            max-width: 70%; /* Image fills 70% of available width */
-            height: auto;
-            display: block; /* Ensures it takes up full width for centering */
-            margin: 0 auto 20px auto; /* Center image and add bottom margin */
-            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.7)); /* Prominent gold glow effect */
+        /* Main headline in the hero section */
+        .hero-section h1 {
+            font-size: 4em; /* Very large font size for the main headline */
+            font-weight: 900; /* Extra bold */
+            color: #FFD700; /* Gold color */
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.7); /* Prominent gold glow */
+            letter-spacing: -2px; /* Slightly tighter letter spacing */
+            margin-bottom: 20px; /* Space below the main headline */
         }
 
 
@@ -302,15 +305,15 @@
                 padding: 60px 20px;
             }
 
-            .hero-logo-img {
-                max-width: 80%; /* Adjust hero logo size for smaller screens */
+            .hero-section h1 {
+                font-size: 3.5em; /* Adjust hero headline size for smaller screens */
             }
 
             .hero-section .sub-headline {
                 font-size: 1.4em;
             }
 
-            .nav-logo-img {
+            .nav-logo-text {
                 height: 35px; /* Adjust nav logo size for smaller screens */
             }
 
@@ -328,13 +331,13 @@
             h1 { font-size: 2em; }
             h2 { font-size: 1.8em; }
             h3 { font-size: 1.4em; }
-            .hero-logo-img {
-                max-width: 90%; /* Further adjust hero logo size */
+            .hero-section h1 {
+                font-size: 2.8em; /* Further adjust hero headline size */
             }
             .hero-section .sub-headline {
                 font-size: 1.2em;
             }
-            .nav-logo-img {
+            .nav-logo-text {
                 height: 30px; /* Further adjust nav logo size */
             }
         }
@@ -345,10 +348,8 @@
     <!-- Navigation Bar -->
     <nav>
         <div class="container">
-            <!-- Image-based logo for navigation -->
-            <a href="#">
-                <img src="images/ChatGPT Image Jun 15, 2025, 12_26_11 PM.jpg" alt="ModeLIQ Logo" class="nav-logo-img">
-            </a>
+            <!-- Text-based logo for navigation -->
+            <a href="#" class="nav-logo-text">ModeLIQ</a>
             <ul>
                 <li><a href="#why-partner">Why ModeLIQ?</a></li>
                 <li><a href="#services">Services</a></li>
@@ -362,8 +363,8 @@
     <!-- Hero Section -->
     <header class="hero-section">
         <div class="container">
-            <!-- Main image-based logo in the hero section -->
-            <img src="images/ChatGPT Image Jun 15, 2025, 12_26_11 PM.jpg" alt="ModeLIQ Consulting Logo" class="hero-logo-img">
+            <!-- Main headline in the hero section (no image logo here) -->
+            <h1>Welcome to <span class="gold-text">ModeLIQ</span></h1>
             <p class="sub-headline gold-text">Quantitative Precision. Strategic Foresight.</p>
             <p>Welcome to <span class="gold-text">ModeLIQ</span> — where <span class="gold-text">quantitative precision</span> meets <span class="gold-text">strategic foresight</span>. In today's rapidly evolving financial landscape, navigating complex regulatory demands, optimising data potential, and mitigating intricate risks are not just challenges; they are opportunities for growth. We are a niche, high-impact consulting firm specialising in <span class="gold-text">risk management</span>, <span class="gold-text">model development</span>, and <span class="gold-text">AI-powered decision systems</span> specifically crafted for the financial services industry.</p>
             <p>At <span class="gold-text">ModeLIQ</span>, we don't just build models — we <span class="gold-text">engineer confidence</span>. Our purpose is to empower financial institutions to thrive amidst uncertainty. With <span class="gold-text">decades of unparalleled experience</span> garnered from Tier 1 banks, global regulators, and cutting-edge fintechs, we stand ready to help you unlock the full potential of your data, deftly navigate regulatory complexity, and <span class="gold-text">future-proof your risk architecture</span> against tomorrow's challenges. Partner with us to transform risk into a strategic advantage.</p>
