@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorisk: A Secure and Compliant Platform for AI-Powered Risk Modeling</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1, h2 {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .intro-text {
+            text-align: center;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .challenge-section h2 {
+            color: #e74c3c;
+        }
+        .solution-section h2 {
+            color: #3498db;
+        }
+        .benefits-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .benefits-table th, .benefits-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        .benefits-table th {
+            background-color: #f2f2f2;
+        }
+        .benefits-table td:first-child {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .flowchart-container {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        .flowchart-container h2 {
+            text-align: center;
+            color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Algorisk: A Secure and Compliant Platform for AI-Powered Risk Modeling</h1>
+        <p class="intro-text">Welcome to <b>Algorisk</b>, an enterprise solution designed to bring clarity, compliance, and confidence to the entire model lifecycle for banks and financial institutions. Our platform leverages the power of Large Language Models (LLMs) to accelerate risk analysis, while providing a robust security framework that meets the highest standards of the financial industry.</p>
+
+        <hr>
+
+        <div class="challenge-section">
+            <h2>The Challenge: Mitigating AI Risks in Banking</h2>
+            <p>While the adoption of AI offers immense opportunities, it also presents significant risks if not managed properly. Many "quick-to-market" solutions overlook the critical security and compliance requirements of a highly regulated industry. This can lead to:</p>
+            <ul>
+                <li><strong>Data Leakage:</strong> Exposure of sensitive customer Personally Identifiable Information (PII) and proprietary data, resulting in a breach of trust and potential financial loss.</li>
+                <li><strong>Regulatory Fines:</strong> Failure to comply with strict regulations like GDPR, CCPA, and regional banking laws, leading to costly penalties and legal action.</li>
+                <li><strong>Reputational Damage:</strong> A single security incident can erode customer trust and brand reputation, which can take years to rebuild.</li>
+                <li><strong>Operational Instability:</strong> Unreliable model outputs and "hallucinations" that lead to flawed risk assessments, poor decision-making, and significant operational risk.</li>
+            </ul>
+            <p>Our mission is to provide an AI-native platform that preemptively addresses these challenges, ensuring that your data remains secure at every step of the model lifecycle.</p>
+        </div>
+
+        <hr>
+
+        <div class="solution-section">
+            <h2>Our Solution: The Algorisk Shield</h2>
+            <p>The Algorisk Shield is our multi-layered defense strategy, built on a <strong>shared responsibility model</strong> with your chosen cloud provider (AWS, Google Cloud, or Microsoft Azure). We provide the application-level security and guardrails, while the cloud platform provides the secure infrastructure.</p>
+            <p>The following chart illustrates the core benefits delivered by the Algorisk Shield:</p>
+
+            <table class="benefits-table">
+                <thead>
+                    <tr>
+                        <th>Safeguard</th>
+                        <th>Description</th>
+                        <th>Benefit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Anonymization</strong></td>
+                        <td>Automated removal or masking of all Personally Identifiable Information (PII) before it is ever sent to the model.</td>
+                        <td>Protects customer privacy and ensures compliance with global data regulations.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tokenization</strong></td>
+                        <td>Replacement of sensitive, non-PII data (e.g., transaction IDs, account balances) with meaningless, randomized tokens.</td>
+                        <td>Prevents the LLM from ever seeing or memorizing confidential financial data, eliminating long-term data exposure risk.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Zero Data Retention</strong></td>
+                        <td>A stateless architecture that discards all data immediately after processing a request. All data is processed in-memory and not stored on disk.</td>
+                        <td>Guarantees data is not retained post-processing, eliminating long-term data exposure and simplifying compliance.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Input & Output Filtering</strong></td>
+                        <td>Advanced guardrails to scan and sanitize both user prompts and model-generated responses in real-time.</td>
+                        <td>Mitigates prompt injection attacks and prevents the generation of sensitive, inaccurate, or confidential outputs.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr>
+
+        <div class="flowchart-container">
+            <h2>The Algorisk AI Ecosystem Flowchart</h2>
+            <p>This flowchart provides a detailed, comprehensive look at the Algorisk AI ecosystem, illustrating the complete data journey from initial input to final, secure output.</p>
+            
+            <pre><code>graph TD
+    subgraph Data Ingestion
+        direction LR
+        A[External Data Streams] --> B(Algorisk API Gateway)
+    end
+    
+    subgraph Security Layer
+        direction TD
+        C{Anonymization & Tokenization}
+        D{Input Guardrails}
+        E{Zero Data Retention}
+    end
+    
+    subgraph AI Model Core
+        direction TD
+        F[LLM in Private Network]
+        G(Model Governance)
+        H{Continuous Monitoring}
+    end
+    
+    subgraph Secure Output
+        direction LR
+        I{Output Guardrails}
+        J{De-tokenization & Re-insertion}
+        K[Final Secure Output]
+    end
+    
+    A --> C
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+    I --> J
+    J --> K
+    
+    style A fill:#D0E8FF,stroke:#333,stroke-width:2px,color:#333
+    style B fill:#A2D2FF,stroke:#333,stroke-width:2px,color:#333
+    style C fill:#98C4E8,stroke:#333,stroke-width:2px,color:#333
+    style D fill:#98C4E8,stroke:#333,stroke-width:2px,color:#333
+    style E fill:#98C4E8,stroke:#333,stroke-width:2px,color:#333
+    style F fill:#F5E8C7,stroke:#333,stroke-width:2px,color:#333
+    style G fill:#F5E8C7,stroke:#333,stroke-width:2px,color:#333
+    style H fill:#F5E8C7,stroke:#333,stroke-width:2px,color:#333
+    style I fill:#B0E0E6,stroke:#333,stroke-width:2px,color:#333
+    style J fill:#B0E0E6,stroke:#333,stroke-width:2px,color:#333
+    style K fill:#B0E0E6,stroke:#333,stroke-width:2px,color:#333
+    style Data Ingestion fill:#E6F3FF,stroke:#ccc,stroke-width:2px,color:#333
+    style Security Layer fill:#CCE5FF,stroke:#ccc,stroke-width:2px,color:#333
+    style AI Model Core fill:#FFF9E6,stroke:#ccc,stroke-width:2px,color:#333
+    style Secure Output fill:#D1F2F7,stroke:#ccc,stroke-width:2px,color:#333
+</code></pre>
+        </div>
+    </div>
+</body>
+</html>
